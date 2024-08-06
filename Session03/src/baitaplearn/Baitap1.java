@@ -1,3 +1,5 @@
+package baitaplearn;
+
 import java.util.Arrays;
 
 public class Baitap1 {
@@ -19,9 +21,10 @@ public class Baitap1 {
                 arrInt[i] = arrInt[i+1];
             }
         }
+
         if(index >= 0){
             System.out.println("Mảng sau khi xóa :");
-            for(int  i = 0 ; i < arrInt.length -1 ; i++){
+            for(int  i = 0 ; i < arrInt.length - 1  ; i++){
                 System.out.print(arrInt[i] + " ");
             }
         }else {

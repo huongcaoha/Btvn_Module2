@@ -1,3 +1,5 @@
+package baitaplearn;
+
 public class Baitap6 {
     public static void main(String[] args) {
         System.out.println("Enter number row in arr ");

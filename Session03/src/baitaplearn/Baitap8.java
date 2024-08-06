@@ -1,3 +1,5 @@
+package baitaplearn;
+
 import java.util.Scanner;
 
 public class Baitap8 {
