@@ -104,10 +104,64 @@ public class Student1 {
         System.out.println("Enter address : ");
         address = scanner.nextLine();
 
-        while (!phoneNumber.matches("^0[35789][0-9]{8}$")){
-            System.out.println("Enter phone number :");
-            phoneNumber = scanner.nextLine();
-            if(!phoneNumber.matches("^0[35789][0-9]{8}$")){
+        while (true){
+           try {
+               System.out.println("Enter phone number :");
+               phoneNumber = scanner.nextLine();
+               if(!phoneNumber.matches("^0[35789][0-9]{8}$")){
+                   System.out.println("Phone number invalid !");
+               }else {
+                   break;
+               }
+           }catch (NullPointerException e){
+               System.out.println("Phone number invalid !");
+           }
+        }
+
+    }
+
+    public void updateData(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter student name : ");
+        studentName = scanner.nextLine();
+
+        while (true){
+            try {
+                System.out.println("Enter age student :");
+                age = Integer.parseInt(scanner.nextLine());
+                if(age >= 6){
+                    break;
+                }
+            }catch (Exception e){
+                System.out.println("Please enter age valid integer & age >= 6 ");
+            }
+        }
+
+        while (true){
+            try {
+                System.out.println("Enter gender student (1 : male , 2 : female , 3 : other ) :");
+                gender = Integer.parseInt(scanner.nextLine());
+                if(gender > 0 && gender < 4){
+                    break;
+                }
+            }catch (Exception e){}
+            System.out.println("Enter gender valid 1 : male , 2 : female , 3 : other");
+        }
+
+        System.out.println("Enter address : ");
+        address = scanner.nextLine();
+
+        while (true){
+            try {
+                System.out.println("Enter phone number :");
+                phoneNumber = scanner.nextLine();
+                if(!phoneNumber.matches("^0[35789][0-9]{8}$")){
+                    System.out.println("Phone number invalid !");
+                }else {
+                    break;
+                }
+            }catch (NullPointerException e){
                 System.out.println("Phone number invalid !");
             }
         }
@@ -116,13 +170,17 @@ public class Student1 {
 
 
     public void displayData() {
-        System.out.println( "Student1{" +
-                "studentId='" + studentId + '\'' +
-                ", studentName='" + studentName + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}');
+        String sex= "";
+        if(gender == 1){
+            sex = "male";
+        }else if (gender == 2){
+            sex = "female" ;
+        }else {
+            sex = "other";
+        }
+        System.out.println("---------------------------------------------------------------------------------");
+        System.out.printf("|%-6s|%-20s|%-6d|%-10s|%-20s|%-12s|\n",studentId,studentName,age,sex,address,phoneNumber);
+
+
     }
 }
