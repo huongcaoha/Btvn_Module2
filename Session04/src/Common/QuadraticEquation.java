@@ -41,7 +41,7 @@ public class QuadraticEquation {
     }
 
     public double  getDiscriminant(){
-        return (b*2)-(4*a*c);
+        return (Math.pow(b,2))-(4*a*c);
     }
 
     public double getRoot1(){
