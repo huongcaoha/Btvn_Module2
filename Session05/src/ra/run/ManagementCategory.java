@@ -91,8 +91,12 @@ public class ManagementCategory {
                    }else {
                        boolean isCheck = false ;
                        for(Product product : DataBase.products){
-                           if(product.getCategoryId() == categoryId){
-                               isCheck = true ;
+                           if(product != null){
+                               if(product.getCategoryId() == categoryId){
+                                   isCheck = true ;
+                                   break;
+                               }
+                           }else {
                                break;
                            }
                        }

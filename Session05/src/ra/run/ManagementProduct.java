@@ -12,14 +12,14 @@ public class ManagementProduct {
         while (true){
             System.out.println("---------------------------PRODUCT MANAGEMENT---------------------------");
             System.out.println("|                 1. Nhập thông tin các sản phẩm                                       |");
-            System.out.println("|                 2. Hiển thị thông tin các sản phẩm                                    |");
+            System.out.println("|                 2. Hiển thị thông tin các sản phẩm                                   |");
             System.out.println("|                 3. Sắp xếp các sản phẩm theo giá                                    |");
-            System.out.println("|                 4. Cập nhật thông tin sản phẩm theo mã sản phẩm             |");
-            System.out.println("|                 5. Xóa sản phẩm theo mã sản phẩm                                  |");
-            System.out.println("|                 6. Tìm kiếm các sản phẩm theo tên sản phẩm                    |");
-            System.out.println("|                 7. Tìm kiếm sản phẩm trong khoảng giá a – b                     |");
-            System.out.println("|                 8. Thoát                                                                           |");
-            System.out.println("----------------------------------------------------------------------------------------");
+            System.out.println("|                 4. Cập nhật thông tin sản phẩm theo mã sản phẩm     |");
+            System.out.println("|                 5. Xóa sản phẩm theo mã sản phẩm                                |");
+            System.out.println("|                 6. Tìm kiếm các sản phẩm theo tên sản phẩm              |");
+            System.out.println("|                 7. Tìm kiếm sản phẩm trong khoảng giá a – b               |");
+            System.out.println("|                 8. Thoát                                                                                    |");
+            System.out.println("----------------------------------------------------------------------------------------------");
             System.out.println("Enter choise");
             int choise = 0 ;
             choise = Common.getInputInt(choise);
