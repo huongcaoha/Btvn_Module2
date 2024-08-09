@@ -102,8 +102,12 @@ public class Product {
             productName = scanner.nextLine().trim().toLowerCase();
             boolean isCheck = false ;
             for(Product product : arrProduct){
-                if(product.productName.equals(productName)){
-                    isCheck = true ;
+                if(product != null){
+                    if(product.productName.equals(productName)){
+                        isCheck = true ;
+                        break;
+                    }
+                }else {
                     break;
                 }
             }
@@ -184,12 +188,16 @@ public class Product {
 
         while (true){
             System.out.println("Enter product name (có từ 10-50 ký tự, không được trùng lặp) :");
-            productName = scanner.nextLine().trim().toLowerCase();
+            String cateName = scanner.nextLine().trim().toLowerCase();
             boolean isCheck = false ;
             for(Product product : arrProduct){
-                if(product.productName.equals(productName)){
-                    isCheck = true ;
-                    break;
+                if(product != null){
+                    if(product.productName.equals(cateName)){
+                        isCheck = true ;
+                        break;
+                    }
+                }else {
+                    break ;
                 }
             }
             if(isCheck){
@@ -197,6 +205,7 @@ public class Product {
             }else if(productName.length() < 10 && productName.length() > 50){
                 System.err.println("Length product name > 10 & < 50 !");
             }else {
+                setProductName(cateName);
                 break;
             }
         }
@@ -237,10 +246,14 @@ public class Product {
                 categoryId = Integer.parseInt(scanner.nextLine());
                 boolean isCheck = false ;
                 for(Category cate : arrCategories){
-                    if(cate.getCategoryId() == categoryId){
-                        isCheck = true ;
-                        break;
-                    }
+                   if(cate != null){
+                       if(cate.getCategoryId() == categoryId){
+                           isCheck = true ;
+                           break;
+                       }
+                   }else {
+                       break;
+                   }
                 }
                 if(!isCheck){
                     System.out.println("Not found id category !");

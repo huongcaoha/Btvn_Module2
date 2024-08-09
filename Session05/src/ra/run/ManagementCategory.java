@@ -22,7 +22,7 @@ public class ManagementCategory {
            int choise = 0 ;
            System.out.println("Enter choise ");
            choise =Common.getInputInt(choise);
-           System.out.println(choise);
+
 
            switch (choise){
                case 1 : {
@@ -63,6 +63,7 @@ public class ManagementCategory {
                            }
                        }
                        DataBase.categories[indexCategory].updateData(scanner,DataBase.categories,DataBase.currentIndexCategory);
+
                        System.out.println("Update successfully !");
                        Common.displayCategory(DataBase.categories);
                    }else {
@@ -73,15 +74,19 @@ public class ManagementCategory {
                case  4 : {
                    System.out.println("Enter id category to delete : ");
                    int categoryId = 0 ;
-                   Common.getInputInt(categoryId);
+                  categoryId = Common.getInputInt(categoryId);
                    int indexCategory = -1 ;
                    for(int i = 0 ; i < DataBase.categories.length ; i++){
-                       if(DataBase.categories[i].getCategoryId()  == categoryId){
-                           indexCategory = i ;
-                           break;
-                       }
+                     if(DataBase.categories[i] != null){
+                         if(DataBase.categories[i].getCategoryId()  == categoryId){
+                             indexCategory = i ;
+                             break;
+                         }
+                     }else {
+                         break;
+                     }
                    }
-                   if(indexCategory == -1){
+                   if(indexCategory  < 0){
                        System.out.println("Not found category id ");
                    }else {
                        boolean isCheck = false ;

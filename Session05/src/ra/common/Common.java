@@ -10,7 +10,8 @@ public class Common {
         if(categories.length == 0){
             System.out.println("Not found category !");
         }else {
-            System.out.printf("| %-5s | %-50s | %-50s | %-10s |","categoryId","categoryName","depcription","categoryStatus");
+//            System.out.printf("| %-5s | %-50s | %-50s | %-10s |","ID","categoryName","depcription","Status\n");
+            System.out.println("----------------------------------------------------List Category---------------------------------------------------");
             for (Category cate : categories){
                 if(cate == null){
                     break;
@@ -18,19 +19,19 @@ public class Common {
                     cate.displayData();
                 }
             }
-            System.out.println("-------------------------------------------------------------------------------------------------------------------");
+            System.out.println("------------------------------------------------------------------------------------------------------------------------");
 
         }
     }
 
     public static void displayProduct(Product[] products){
-        if(products.length == 0){
+        if(DataBase.currentIndexProduct < 0 ){
             System.out.println("List product empty !");
         }else {
-          for(Product pro : DataBase.products){
+            System.out.printf("| %-6s | %-30s | %-10s | %-30s | %-12s | %-5s | %-20s |\n","ID","productName","price","description","created","categoryId","Status");
+          for(Product pro : products){
               if(pro != null){
-                  System.out.printf("| %-6s | %-30s | %-10s | %-30s | %-12s | %-5s | %-10s |\n","productId","productName","price","description","created","categoryId","Status");
-                  System.out.printf("| %-6s | %-30s | %-10s | %-30s | %-12s | %-5s | %-10s |\n",pro.getCategoryId(),pro.getProductName(),pro.getPrice(),pro.getDescription(),pro.getCreated(),pro.getCategoryId(),pro.getProductStatus());
+                  System.out.printf("| %-6s | %-30s | %-10s | %-30s | %-12s | %-5s | %-20s |\n",pro.getProductId(),pro.getProductName(),pro.getPrice(),pro.getDescription(),pro.getCreated(),pro.getCategoryId(),pro.getProductStatus() == 0 ? "Đang bán" : (pro.getProductStatus() == 1 ? "Hết hàng" : "Không bán"));
               }else {
                   break;
               }

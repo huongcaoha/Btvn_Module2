@@ -92,20 +92,25 @@ public class Category {
     public void updateData(Scanner scanner ,Category[] categories ,int index){
 
         while (true){
-            boolean isCheck = true ;
+            boolean isCheck = false ;
             System.out.println("Enter category name :");
-            categoryName = scanner.nextLine().trim().toLowerCase();
+           String categoryName = scanner.nextLine().trim().toLowerCase();
             for(Category cate : categories){
-                if(cate.categoryName.equals(categoryName)){
-                    isCheck = false ;
-                    break;
-                }
+               if(cate != null){
+                   if(cate.getCategoryName().equals(categoryName)){
+                       isCheck = true ;
+                       break;
+                   }
+               }else {
+                   break;
+               }
             }
-            if(!isCheck){
+            if(isCheck){
                 System.err.println("Category name exis !");
             }else if (categoryName.length() > 50){
                 System.err.println("Length category name > 50 character !");
             }else {
+                setCategoryName(categoryName);
                 break;
             }
 
@@ -127,7 +132,7 @@ public class Category {
     }
 
     public void displayData(){
-        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("| %-5d | %-50s | %-50s | %-10s |",categoryId,categoryName,depcription,categoryStatus);
         System.out.println();
     }
@@ -137,7 +142,7 @@ public class Category {
 //        Category category2 = new Category(2,"Kẹo mut","ngon vl",true);
 //        category1.displayData();
 //        category2.displayData();
-//        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+//        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 //
 //    }
 

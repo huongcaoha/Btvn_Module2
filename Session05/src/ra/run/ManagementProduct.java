@@ -29,6 +29,7 @@ public class ManagementProduct {
                     int quantity = 0 ;
                     quantity = Common.getInputInt(quantity);
                     for(int i = 1 ; i <= quantity ; i++){
+                        System.out.println("Enter product number : " +  i);
                         Product product = new Product();
                         product.inputData(scanner ,DataBase.products,DataBase.currentIndexProduct,DataBase.categories);
                         DataBase.currentIndexProduct++ ;
@@ -64,10 +65,14 @@ public class ManagementProduct {
                         String idProduct = scanner.nextLine().trim();
                         int indexProduct = -1 ;
                         for(int i = 0 ; i <= DataBase.currentIndexProduct ; i++){
-                            if(DataBase.products[i].getProductId().equals(idProduct)){
-                                indexProduct = i ;
-                                break;
-                            }
+                           if(DataBase.products[i] != null){
+                               if(DataBase.products[i].getProductId().equals(idProduct)){
+                                   indexProduct = i ;
+                                   break;
+                               }
+                           }else {
+                               break;
+                           }
                         }
                         if(indexProduct == -1){
                             System.out.println("Not found id product !");
@@ -83,8 +88,12 @@ public class ManagementProduct {
                     String idProduct = scanner.nextLine().trim();
                     int indexProduct = -1 ;
                     for(int i = 0 ; i <= DataBase.currentIndexProduct ; i++){
-                        if(DataBase.products[i].getProductId().equals(idProduct)){
-                            indexProduct = i ;
+                        if(DataBase.products[i] != null){
+                            if(DataBase.products[i].getProductId().equals(idProduct)){
+                                indexProduct = i ;
+                                break;
+                            }
+                        }else {
                             break;
                         }
                     }
@@ -109,7 +118,7 @@ public class ManagementProduct {
                         if(product == null){
                             break;
                         }else {
-                            if(product.getProductName().contains(search)){
+                            if(product.getProductName().matches(".*"+search+".*")){
                                 indexSearch++;
                                 listProduct[indexSearch] = product ;
                             }
