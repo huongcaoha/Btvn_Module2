@@ -42,10 +42,7 @@ public class SingerService {
                    break;
                }
                case 4 : {
-                   int idSinger = 0 ;
-                   idSinger = Common.getInputInt(idSinger,"Enter singer id : ");
-                   SingerController.deleteSinger(idSinger,Data.singers,Data.currentIndexSingers);
-                   Data.currentIndexSingers-- ;
+                 SingerController.deleteSinger();
                    break;
                }
                case 5 : {

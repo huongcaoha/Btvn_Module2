@@ -70,7 +70,72 @@ public class Department {
             System.out.println("Enter department name : ");
             departName = scanner.nextLine().trim();
             if(departName.matches("^[DP]\\w{5}$")){
+                boolean checkName = false ;
+                for (int i = 0 ; i <= index ; i++){
+                    if(arrDepartments[i].getDepartName().toLowerCase().equals(departName.toLowerCase())){
+                        checkName = true ;
+                        break;
+                    }
+                }
+                if(checkName){
+                    System.err.println("Department name exis !");
+                }else {
+                    break;
+                }
+            }else {
+                System.err.println("Department name Minimum 6 characters - Starts with the letter D or P - No duplicates !");
+            }
+        }
+
+        while (true){
+            System.out.println("Enter description : ");
+            description = scanner.nextLine().trim();
+            if(description.length() >= 5 ){
                 break;
+            }else {
+                System.err.println("Length description >= 5 !");
+            }
+        }
+
+        while (true){
+            System.out.println("Enter phone number department : ");
+            phone = scanner.nextLine().trim();
+            if(phone.matches("^02[0-9][0-9][0-9]{6}$")){
+                break;
+            }else {
+                System.err.println("Phone number invalid !");
+            }
+        }
+
+        while (true){
+            try {
+                System.out.println("Enter status department (true or false): ");
+                status = Boolean.parseBoolean(scanner.nextLine().trim());
+                break;
+            }catch (Exception e){
+                System.out.println("Status invalid !");
+            }
+        }
+    }
+
+    public void updateData(Scanner scanner, Department[] arrDepartments, int index){
+        while (true){
+            System.out.println("Enter department name : ");
+            String departmentName = scanner.nextLine().trim();
+            if(departName.matches("^[DP]\\w{5}$")){
+                boolean checkName = false ;
+                for (int i = 0 ; i <= index ; i++){
+                    if(arrDepartments[i].getDepartName().toLowerCase().equals(departmentName.toLowerCase())){
+                        checkName = true ;
+                        break;
+                    }
+                }
+                if(checkName){
+                    System.err.println("Department name exis !");
+                }else {
+                    departName = departmentName ;
+                    break;
+                }
             }else {
                 System.err.println("Department name Minimum 6 characters - Starts with the letter D or P - No duplicates !");
             }
@@ -109,6 +174,6 @@ public class Department {
 
     public void displayData(){
         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("| %-10d | %-50s | %-50s | %-15s | %-15s |\n",departId,departName,description,phone,status);
+        System.out.printf("[ %-10d | %-50s | %-50s | %-15s | %-15s ]\n",departId,departName,description,phone,status);
     }
 }

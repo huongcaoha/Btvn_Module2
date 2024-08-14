@@ -22,8 +22,5 @@ public class Common {
         return number ;
     }
 
-    public static void main(String[] args) {
-        Date demo = new Date();
-        System.out.println(demo);
-    }
+
 }

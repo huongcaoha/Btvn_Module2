@@ -261,7 +261,10 @@ public class Song {
     }
 
     public void displayData(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("| %-10s | %-30s | %-30s | %-30s | %-30s | %-20s | %-15s |\n",songId,songName,descriptions,singer.getSingerName(),songWriter,createdDate,songStatus);
+        System.out.printf("[ %-10s | %-30s | %-30s | %-30s | %-30s | %-20s | %-15s ]\n",songId,songName,descriptions,singer.getSingerName(),songWriter,simpleDateFormat.format(createdDate),songStatus);
     }
+
+
 }

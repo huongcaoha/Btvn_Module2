@@ -194,6 +194,6 @@ public class Singer {
 
     public void displayData(){
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("| %-6d | %-30s | %-10d | %-30s | %-15s | %-30s |\n",singerId,singerName,age,nationality,gender,genre);
+        System.out.printf("[ %-6d | %-30s | %-10d | %-30s | %-15s | %-30s ]\n",singerId,singerName,age,nationality,gender? "male":"female",genre);
     }
 }

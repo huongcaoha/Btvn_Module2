@@ -1,7 +1,9 @@
 package bai2.ra.Controller;
 
+import bai2.ra.Common.Common;
 import bai2.ra.Database.Data;
 import bai2.ra.model.Singer;
+import bai2.ra.model.Song;
 
 public class SingerController {
 //    public static void addSingers(Singer[] singers ,int currentIndex){
@@ -11,7 +13,7 @@ public class SingerController {
 //    }
 
     public static void displaySingers(Singer[] singers){
-        System.out.printf("| %-6s | %-30s | %-10s | %-30s | %-15s | %-30s |\n","ID","singerName","age","nationality","gender","genre");
+        System.out.printf("[ %-6s | %-30s | %-10s | %-30s | %-15s | %-30s ]\n","ID","singerName","age","nationality","gender","genre");
         for(Singer singer : singers){
             if(singer != null){
                 singer.displayData();
@@ -43,29 +45,37 @@ public class SingerController {
         }
     }
 
-    public static void deleteSinger(int id ,Singer[] singers,int currentIndex){
+    public static void deleteSinger(){
+        int idSinger = 0 ;
+        idSinger = Common.getInputInt(idSinger,"Enter id singer want delete : ");
         int index = -1 ;
-        for(int i = 0  ; i < singers.length ; i++){
-            if(singers[i] == null){
+        for(int  i = 0 ; i <= Data.currentIndexSingers ; i++){
+            if(Data.singers[i].getSingerId() == idSinger){
+                index = i ;
                 break;
-            }else {
-                if(singers[i].getSingerId() == id){
-                    index = i ;
-                    break;
-                }
             }
         }
         if(index < 0){
-            System.out.println("Not found singer !");
+            System.err.println("Not found id singer !");
         }else {
-            for(int i = index ; i < currentIndex ; i++){
-                Singer tmp = singers[i];
-                singers[i] = singers[i+1];
-                singers[i+1] = tmp ;
+            boolean checkSong = false ;
+            for(int i = 0 ; i <= Data.currentIndexSongs ; i++){
+                if(Data.songs[i].getSinger().getSingerId() == idSinger){
+                    checkSong = true ;
+                    break;
+                }
             }
-            singers[currentIndex] = null ;
-            System.out.println("Delete successfully !");
-            displaySingers(Data.singers);
+            if(checkSong){
+                System.err.println("Cannot delete singer because singer has song !");
+            }else {
+                for(int i= index ; i < Data.currentIndexSingers ; i++){
+                    Data.singers[i] = Data.singers[i+1];
+                }
+                Data.singers[Data.currentIndexSingers] = null ;
+                Data.currentIndexSingers-- ;
+                System.out.println("Delete singer successfully !");
+                displaySingers(Data.singers);
+            }
         }
     }
 
