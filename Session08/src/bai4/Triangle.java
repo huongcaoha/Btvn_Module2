@@ -32,11 +32,11 @@ public class Triangle extends  Shape{
     @Override
     public String toString() {
         return  super.toString()+
+
                 "side1=" + side1 +"\n" +
                 ", side2=" + side2 +"\n" +
                 ", side3=" + side3  + "\n";
     }
-
     public void setSide1(double side1) {
         this.side1 = side1;
     }
