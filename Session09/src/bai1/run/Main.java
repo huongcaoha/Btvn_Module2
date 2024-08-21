@@ -26,7 +26,7 @@ public class Main {
         System.out.println("Area of shapes before resize : ");
        for(Resizable s : shape){
             s.displayData();
-            s.resize(random.nextDouble(99)+1);
+            s.resize(random.nextDouble(100)+1);
        }
 
         System.out.println();

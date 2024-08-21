@@ -1,6 +1,8 @@
 package bai4.entity;
 
-public abstract class Shape {
+import java.io.Serializable;
+
+public abstract class Shape implements Serializable {
     private String color ;
 
     public Shape() {
