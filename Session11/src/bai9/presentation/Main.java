@@ -35,26 +35,82 @@ public class Main {
                     break;
                 }
                 case 2 : {
-                    System.out.println("Enter number student want add :");
+                    int number = 0 ;
+                    while (true){
+                        try {
+                            System.out.println("Enter number student want add :");
+                            number = Integer.parseInt(scanner.nextLine().trim());
+                            if(number > 0){
+                                break;
+                            }else {
+                                System.err.println("Enter number  > 0 !");
+                            }
+                        }catch (Exception e){
+                            System.err.println("Number invalid !");
+                        }
+                    }
+                    for(int i = 1 ; i <= number ; i++){
+                        System.out.println("Enter student " + i );
+                            Student student = new Student();
+                            student.input(scanner);
+                        studentManagement.addStudent(student);
+                    }
+                    System.out.println("Add successfully " + number + " student !");
+                    studentManagement.showAll();
                     break;
                 }
                 case 3 : {
+                    int id = 0 ;
+                    while (true){
+                        try {
+                            System.out.println("Enter id student :");
+                            id = Integer.parseInt(scanner.nextLine().trim());
+                            if(id >= 0){
+                                break;
+                            }else {
+                                System.out.println("Enter id >= 0 !");
+                            }
+                        }catch (Exception e){
+                            System.out.println("Enter id is integer !");
+                        }
+                    }
+                    studentManagement.removeStudent(id);
                     break;
                 }
                 case 4 : {
+                    int id = 0 ;
+                    while (true){
+                        try {
+                            System.out.println("Enter id student :");
+                            id = Integer.parseInt(scanner.nextLine().trim());
+                            if(id >= 0){
+                                break;
+                            }else {
+                                System.out.println("Enter id >= 0 !");
+                            }
+                        }catch (Exception e){
+                            System.out.println("Enter id is integer !");
+                        }
+                    }
+                    studentManagement.findStudentById(id);
                     break;
                 }
                 case 5 : {
+                    System.out.println("Avg score all student  : " + studentManagement.getAverageScoreAllStudent());
                     break;
                 }
                 case 6 : {
+                    System.out.println("List student after sort by score : ");
+                    studentManagement.sortByScore();
+                    studentManagement.showAll();
                     break;
                 }
                 case 7 : {
-                    break;
+                    System.out.println("Goodbye !!!");
+                   return;
                 }
                 default:{
-
+                    System.err.println("Enter choice form 1 to 7 !");
                 }
             }
         }

@@ -1,4 +1,7 @@
 package bai9.business.entity;
+
+import java.util.Scanner;
+
 public class Student {
     private static Integer current = 1 ;
     private Integer studentId ;
@@ -15,7 +18,30 @@ public class Student {
         this.avgScore = avgScore;
     }
 
-    public void input(){
+    public void input(Scanner scanner){
+        while (true){
+            System.out.println("Enter name :");
+            this.name = scanner.nextLine().trim();
+            if(name.length() == 0){
+                System.out.println("Do not blank !");
+            }else {
+                break;
+            }
+        }
+
+        while (true){
+            try {
+                System.out.println("Enter avg score :");
+                this.avgScore = Double.parseDouble(scanner.nextLine().trim());
+                if(avgScore > 0){
+                    break;
+                }else {
+                    System.err.println("Enter avg score > 0 !");
+                }
+            }catch (Exception e){
+                System.out.println("Avg score invalid !");
+            }
+        }
 
     }
     public String getName() {
