@@ -8,7 +8,7 @@ import java.util.List;
 public class DepartmentService implements ICRUD<Department> {
     @Override
     public void displayList(List<Department> list) {
-
+        
     }
 
     @Override

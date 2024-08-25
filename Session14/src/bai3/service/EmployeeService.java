@@ -2,10 +2,11 @@ package bai3.service;
 
 import bai3.IInterface.ICRUD;
 import bai3.database.Database;
+import bai3.entity.Department;
 import bai3.entity.Employee;
 
-import java.util.List;
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
 
 public class EmployeeService implements ICRUD<Employee> {
     Scanner scanner = new Scanner(System.in);
@@ -107,5 +108,83 @@ public class EmployeeService implements ICRUD<Employee> {
             return false ;
         }
 
+    }
+
+    public void employeeDetail(){
+        String employeeId = "" ;
+        while (true){
+            System.out.println("Enter employee id to update : ");
+            employeeId = scanner.nextLine().trim();
+            if(employeeId.isEmpty()){
+                System.err.println("Cannot be left blank !");
+            }else {
+                break;
+            }
+        }
+        int index = -1 ;
+        for(int i = 0 ; i < Database.employees.size() ; i++){
+            if(Database.employees.get(i).getEmployeeId().equalsIgnoreCase(employeeId)){
+                index = i ;
+                break;
+            }
+        }
+        if(index >= 0){
+            System.out.println( Database.employees.get(index).toString());
+        }else {
+            System.err.println("Not found employee id !");
+        }
+    }
+
+    public void statisticAvgEmployee(){
+        int avg = Database.departments.stream().mapToInt(Department::getTotalMembers).sum() / Database.departments.size();
+        System.out.println("Average of each department  is : " + avg + " employee !");
+    }
+
+    public void get5DepartmentMostEmployee(){
+        List<Department> departmentArranged = Database.departments.stream().sorted((a,b) -> b.getTotalMembers().compareTo(a.getTotalMembers())).toList();
+        System.out.println("List 5 department have most employee : ");
+        for(int i = 0 ; i < 5 ; i++){
+            System.out.println(Database.departments.get(i).toString());
+        }
+    }
+
+    public void searchManagerMostEmployee(){
+        Map<String,Integer> listManager = new HashMap<>();
+        for(Employee e : Database.employees){
+            if(e.getManager() != null){
+                String empName = e.getManager().getEmployeeName();
+                if(listManager.containsKey(empName)){
+                    listManager.put(empName,listManager.get(empName)+1);
+                }else {
+                    listManager.put(empName,1);
+                }
+            }
+        }
+
+        int number  = 0 ;
+        String nameEmployee = "" ;
+        for(Map.Entry<String, Integer> emp : listManager.entrySet()){
+            if(emp.getValue() > number){
+                number = emp.getValue();
+                nameEmployee = emp.getKey();
+            }
+        }
+        System.out.println("Manager have most employee is " + nameEmployee +" : " + number + " employee !" );
+    }
+
+    public void get5EmployeeMostAge(){
+       List<Employee> newEmployees = Database.employees.stream().sorted((a,b) -> (LocalDate.now().getYear() - b.getBirthday().getYear()) - (LocalDate.now().getYear() - a.getBirthday().getYear()) ).toList();
+        System.out.println("5 Employee most age : ");
+        for(int i = 0 ; i < 5 ; i++){
+            System.out.println(newEmployees.get(i).toString());
+        }
+    }
+
+    public void get5EmployeeMostSalary(){
+        List<Employee> newEmployees = Database.employees.stream().sorted((a,b) -> b.getSalary().compareTo(a.getSalary())).toList();
+        System.out.println("5 Employee most salary  : ");
+        for(int i = 0 ; i < 5 ; i++){
+            System.out.println(newEmployees.get(i).toString());
+        }
     }
 }
