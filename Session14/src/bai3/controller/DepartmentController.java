@@ -1,5 +1,6 @@
 package bai3.controller;
 
+import bai3.database.Database;
 import bai3.service.DepartmentService;
 import bai3.service.EmployeeService;
 
@@ -34,19 +35,23 @@ public class DepartmentController {
             }
             switch (choice){
                 case 1 : {
-
+                        departmentService.displayList(Database.departments);
                     break;
                 }
                 case 2 : {
+                    departmentService.add();
                     break;
                 }
                 case 3 : {
+                    departmentService.update();
                     break;
                 }
                 case 4 : {
+                    departmentService.displayEmployeeByDepartmentId();
                     break;
                 }
                 case 5 : {
+                    departmentService.delete();
                     break;
                 }
                 case 6 : {
