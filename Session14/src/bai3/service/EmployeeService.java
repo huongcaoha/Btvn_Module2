@@ -113,7 +113,7 @@ public class EmployeeService implements ICRUD<Employee> {
     public void employeeDetail(){
         String employeeId = "" ;
         while (true){
-            System.out.println("Enter employee id to update : ");
+            System.out.println("Enter employee id to search : ");
             employeeId = scanner.nextLine().trim();
             if(employeeId.isEmpty()){
                 System.err.println("Cannot be left blank !");
@@ -142,10 +142,18 @@ public class EmployeeService implements ICRUD<Employee> {
 
     public void get5DepartmentMostEmployee(){
         List<Department> departmentArranged = Database.departments.stream().sorted((a,b) -> b.getTotalMembers().compareTo(a.getTotalMembers())).toList();
-        System.out.println("List 5 department have most employee : ");
-        for(int i = 0 ; i < 5 ; i++){
-            System.out.println(Database.departments.get(i).toString());
-        }
+            if(departmentArranged.isEmpty()){
+                System.err.println("List department empty !");
+            }else {
+                System.out.println("List 5 department have most employee : ");
+                for(int i = 0 ; i < 5 ; i++){
+                    if(departmentArranged.get(i) == null){
+                        break;
+                    }else {
+                        System.out.println(departmentArranged.get(i).toString());
+                    }
+                }
+            }
     }
 
     public void searchManagerMostEmployee(){
@@ -174,17 +182,33 @@ public class EmployeeService implements ICRUD<Employee> {
 
     public void get5EmployeeMostAge(){
        List<Employee> newEmployees = Database.employees.stream().sorted((a,b) -> (LocalDate.now().getYear() - b.getBirthday().getYear()) - (LocalDate.now().getYear() - a.getBirthday().getYear()) ).toList();
-        System.out.println("5 Employee most age : ");
-        for(int i = 0 ; i < 5 ; i++){
-            System.out.println(newEmployees.get(i).toString());
-        }
+       if(newEmployees.isEmpty()){
+           System.err.println("List employee is empty !");
+       }else {
+           System.out.println("5 Employee most age : ");
+           for(int i = 0 ; i < 5 ; i++){
+               if(newEmployees.get(i) != null){
+                   System.out.println(newEmployees.get(i).toString());
+               }else {
+                   break;
+               }
+           }
+       }
     }
 
     public void get5EmployeeMostSalary(){
-        List<Employee> newEmployees = Database.employees.stream().sorted((a,b) -> b.getSalary().compareTo(a.getSalary())).toList();
-        System.out.println("5 Employee most salary  : ");
-        for(int i = 0 ; i < 5 ; i++){
-            System.out.println(newEmployees.get(i).toString());
+        List<Employee> newEmployees = Database.employees.stream().sorted((a,b) -> b.getSalary().compareTo(a.getSalary())).toList().reversed();
+        if(newEmployees.isEmpty()){
+            System.err.println("List employee is empty !");
+        }else {
+            System.out.println("5 Employee most salary  : ");
+            for(int i = 0 ; i < 5 ; i++){
+                if(newEmployees.get(i) != null){
+                    System.out.println(newEmployees.get(i).toString());
+                }else {
+                    break;
+                }
+            }
         }
     }
 }

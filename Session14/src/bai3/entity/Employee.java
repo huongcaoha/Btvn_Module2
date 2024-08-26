@@ -213,7 +213,7 @@ public class Employee {
                     System.err.println("Birthday invalid !");
                 }
             }catch (Exception e){
-                System.out.println("Birthday invalid !");
+                System.err.println("Birthday invalid !");
             }
         }
     }
@@ -261,7 +261,7 @@ public class Employee {
                 ", birthday=" + birthday +
                 ", sex=" + sex +
                 ", salary=" + salary +
-                ", manager=" + manager +
+                ", manager=" + manager.getEmployeeName() +
                 ", department=" + department.getDepartmentName() +
                 '}';
     }

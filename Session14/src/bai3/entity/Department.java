@@ -45,9 +45,9 @@ public class Department {
 
     }
 
-    public void updateData(Scanner scanner , List<Department> departments){
+    public void updateData(Scanner scanner , List<Department> departments, int oddIndex){
 
-        inputDepartmentName(scanner, departments);
+        updateDepartmentName(scanner, departments,oddIndex);
 
         inputTotalMembers(scanner);
 
@@ -85,6 +85,33 @@ public class Department {
                     }
                 }
                 if(isCheck){
+                    System.err.println("Department name existed !");
+                }else {
+                    break;
+                }
+            }else {
+                System.err.println("Cannot be left blank !");
+            }
+        }
+    }
+
+    private void updateDepartmentName(Scanner scanner, List<Department> departments,int oddIndex) {
+        while (true){
+            System.out.println("Enter department name :");
+            departmentName = scanner.nextLine().trim();
+            if(!departmentName.isEmpty()){
+                if(departments.isEmpty()){
+                    break;
+                }
+                boolean isExit = false ;
+
+                for(int i = 0 ; i < departments.size() ; i++){
+                    if(departments.get(i).getDepartmentName().equalsIgnoreCase(departmentName) && oddIndex != i){
+                        isExit = true ;
+                        break;
+                    }
+                }
+                if(isExit){
                     System.err.println("Department name existed !");
                 }else {
                     break;

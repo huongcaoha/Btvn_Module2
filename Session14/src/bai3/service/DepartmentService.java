@@ -71,7 +71,7 @@ public class DepartmentService implements ICRUD<Department> {
             System.err.println("Not found department !");
             return false ;
         }else {
-            Database.departments.get(index).updateData(scanner,Database.departments);
+            Database.departments.get(index).updateData(scanner,Database.departments, index);
             System.out.println("Update department successfully !");
             displayList(Database.departments);
             return true ;
