@@ -2,12 +2,14 @@ package ra.service;
 
 import ra.common.IMethod;
 import ra.entity.Categories;
+import ra.entity.Product;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class CategoriesService {
     static  String fileName = "listCategories.txt";
+    static String fileNameProduct = "listProduct.txt" ;
     static  Scanner scanner = new Scanner(System.in);
     public static void displayListCategories(List<Categories> categories){
         if(categories.isEmpty()){
@@ -20,7 +22,7 @@ public class CategoriesService {
         }
     }
 
-    public static boolean addCategories(){
+    public static void addCategories(){
         List<Categories> categories = IMethod.getListObject(fileName);
         int number = 0 ;
         number = IMethod.getNumber(scanner,number,"Enter number categories want add : ");
@@ -38,10 +40,9 @@ public class CategoriesService {
         }else {
             System.out.println("Add error !");
         }
-        return rs ;
     }
 
-    public static boolean updateCategories(){
+    public static void updateCategories(){
         List<Categories> categories = IMethod.getListObject(fileName);
         int cateId = 0;
         while (true){
@@ -68,10 +69,8 @@ public class CategoriesService {
             categories.get(index).updateData(scanner);
             IMethod.saveDatabase(fileName,categories);
             System.out.println("Update category successfully !");
-            return true ;
         }else {
             System.err.println("Not found cate id !");
-            return false ;
         }
     }
 
@@ -109,8 +108,9 @@ public class CategoriesService {
         }
     }
 
-    public static boolean deleteCategories(){
+    public static void deleteCategories(){
         List<Categories> categories = IMethod.getListObject(fileName);
+        List<Product> products = IMethod.getListObject(fileNameProduct);
         int cateId = 0;
         while (true){
             try {
@@ -133,13 +133,16 @@ public class CategoriesService {
             }
         }
         if(index >= 0){
-            categories.remove(index);
-            IMethod.saveDatabase(fileName,categories);
-            System.out.println("Delete category successfully !");
-            return true ;
+            int finalCateId = cateId;
+            if(products.stream().anyMatch(product -> product.getCatalogId() == finalCateId)){
+                System.err.println("Cannot delete  because this category has product !");
+            }else {
+                categories.remove(index);
+                IMethod.saveDatabase(fileName,categories);
+                System.out.println("Delete category successfully !");
+            }
         }else {
             System.err.println("Not found cate id !");
-            return false ;
         }
     }
 
