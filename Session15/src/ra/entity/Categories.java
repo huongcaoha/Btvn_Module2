@@ -2,10 +2,11 @@ package ra.entity;
 
 import ra.common.IMethod;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Scanner;
 
-public class Categories {
+public class Categories implements Serializable {
     String fileName = "listCategories.txt";
     private Integer catalogId ;
     private String catalogName ;
@@ -68,7 +69,7 @@ public class Categories {
     public void updateData(Scanner scanner){
         List<Categories> categories = IMethod.getListObject(fileName);
 
-        inputCatalogName(scanner, categories);
+        updateCatalogName(scanner, categories);
 
         inputDescription(scanner);
 
@@ -125,13 +126,30 @@ public class Categories {
         }
     }
 
+    private void updateCatalogName(Scanner scanner, List<Categories> categories) {
+        String oddName = catalogName;
+        while (true){
+            System.out.println("Enter category name : ");
+            this.catalogName = scanner.nextLine().trim();
+            if(!catalogName.isEmpty() && catalogName.length() <= 50){
+                boolean isExist =  categories.stream().anyMatch(el -> el.getCatalogName().equalsIgnoreCase(catalogName) && !el.getCatalogName().equalsIgnoreCase(oddName));
+                if(isExist){
+                    System.err.println("Catalog name existed !");
+                }else {
+                    break;
+                }
+            }else {
+                System.err.println("Catalog name not empty & length <= 50 !");
+            }
+        }
+    }
+
     public void displayData(){
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("[ %-6d | %-30s | %-50s | %20s ]\n" , catalogId,catalogName,descriptions,catalogStatus?"on sale" : "off sale");
     }
 
     private void getCategoryId(List<Categories> categories) {
-
         if(categories.isEmpty()){
             this.catalogId = 1 ;
         }else {

@@ -2,14 +2,15 @@ package ra.entity;
 
 import ra.common.IMethod;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Product {
+public class Product implements Serializable {
     String fileNameProduct = "listProduct.txt";
-    String fileNameCategory = "listCategory.txt";
+    String fileNameCategory = "listCategories.txt";
 
     private String productId ;
     private String productName ;
@@ -124,7 +125,7 @@ public class Product {
 
     public void displayData(){
         System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("[ %- 10s | %-30s | %-15.1f | %-30s | %-10d | %-20s ]\n",productId,productName,price,description,catalogId,productStatus == 0 ? "on sale" : (productStatus == 1 ? "out of stock" : "off sale"));
+        System.out.printf("[ %-10s | %-30s | %-15.1f | %-30s | %-10d | %-20s ]\n",productId,productName,price,description,catalogId,productStatus == 0 ? "on sale" : (productStatus == 1 ? "out of stock" : "off sale"));
     }
 
     private void inputProductStatus(Scanner scanner) {
@@ -216,7 +217,7 @@ public class Product {
             System.out.println("Enter product name (must be from 10-50 characters, no duplicates) :");
             this.productName = scanner.nextLine().trim();
             if(productName.length() >= 10 && productName.length() <= 50){
-                boolean isExist = products.stream().anyMatch(el -> el.getProductName().equalsIgnoreCase(productName) && el.getProductName().equalsIgnoreCase(oddProductName));
+                boolean isExist = products.stream().anyMatch(el -> el.getProductName().equalsIgnoreCase(productName) && !el.getProductName().equalsIgnoreCase(oddProductName));
                 if(isExist){
                     System.err.println("Product name existed !");
                 }else {
