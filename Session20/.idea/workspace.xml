@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9d4a3f48-cb70-40fb-b594-c0039c90d727" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../HN_-JV240617_AD_NguyenCongHuong" beforeDir="false" afterPath="$PROJECT_DIR$/../HN_-JV240617_AD_NguyenCongHuong" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session10/Baitap1-cleancode-refactoring" beforeDir="false" afterPath="$PROJECT_DIR$/../Session10/Baitap1-cleancode-refactoring" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session10/MD3-SS10-StudentManagerment" beforeDir="false" afterPath="$PROJECT_DIR$/../Session10/MD3-SS10-StudentManagerment" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai4/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai5/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai6/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai6/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai6/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai6/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session13/src/bai6/TreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session13/src/bai6/TreeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai10/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai10/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai11/FootballTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai11/FootballTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai11/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai11/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai12/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai12/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai14/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai14/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai14/SortingStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai14/SortingStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai14/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai14/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai4/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai5/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai6/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai6/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai7/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai7/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai8/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session_16/src/bai9/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Session_16/src/bai9/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2ld81SHfLgWSBopxGqeTg23zzvx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dell/IdeaProjects/Btvn_Module2/Session21&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d4a3f48-cb70-40fb-b594-c0039c90d727" name="Changes" comment="" />
+      <created>1725498379402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725498379402</updated>
+      <workItem from="1725498380449" duration="656000" />
+      <workItem from="1725502488242" duration="378000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

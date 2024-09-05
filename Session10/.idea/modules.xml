@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Baitap1-cleancode-refactoring/Baitap1-cleancode-refactoring.iml" filepath="$PROJECT_DIR$/Baitap1-cleancode-refactoring/Baitap1-cleancode-refactoring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MD3-SS10-StudentManagerment/MD3-SS10-StudentManagerment.iml" filepath="$PROJECT_DIR$/MD3-SS10-StudentManagerment/MD3-SS10-StudentManagerment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Session10.iml" filepath="$PROJECT_DIR$/.idea/Session10.iml" />
+    </modules>
+  </component>
+</project>

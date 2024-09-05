@@ -1,3 +1,5 @@
+package bai6;
+
 public class Node {
     private int  value ;
     private Node left ;

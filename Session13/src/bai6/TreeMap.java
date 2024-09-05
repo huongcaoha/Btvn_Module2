@@ -1,3 +1,5 @@
+package bai6;
+
 import bai6.Node;
 
 import java.util.List;
@@ -40,6 +42,14 @@ public class TreeMap {
             inorderTraversal(node.getLeft());
             System.out.print(node.getValue()+ " ");
             inorderTraversal(node.getRight());
+        }
+    }
+
+    public void  postorder(Node current){
+        if(current != null){
+            postorder(current.getLeft());
+            postorder(current.getRight());
+            System.out.print(current.getValue() + " ");
         }
     }
 }
